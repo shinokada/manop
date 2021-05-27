@@ -57,7 +57,15 @@ manop cd -e
 The outputs may have spaces. You can trim spaces:
 
 ```sh
-manop -t grep -r
+manop grep -b
+     -b, --byte-offset
+             The offset in bytes of a matched pattern is displayed in front of
+             the respective matched line.
+
+manop -t grep -b
+ -b, --byte-offset
+ The offset in bytes of a matched pattern is displayed in front of
+ the respective matched line.
 ```
 
 To display builtin command help use help:
