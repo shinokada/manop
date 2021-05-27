@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+
+########################
+# Author: Shinichi Okada
+# Date: 2021-05-26
+###########################
+
+# set defaults
+version="v0.1.4"
+script_name=$(basename "$0")
+
+usage() {
+    cat <<EOF
+
+Name:
+=====
+$script_name
+
+Version:
+=====
+$version
+
+Description:
+=====
+This script outputs a command description or an option description from the man page.
+
+Usage:
+======
+$script_name [ -t | -h | -v][ command name ][ command option ]
+    -t | --trim    Trim spaces
+    -v | --version Show version
+    -h | --help    Help
+
+Examples:
+=========
+    Shows wget -b option description.
+    $ manop wget -b
+
+    Shows the ls command description.
+    $ manop ls
+
+    Shows builtin commands description.
+    $ manop cd
+
+    Shows builtin cd -e option description.
+    $ manop cd -e
+
+    Trim spaces
+    $ manop -t grep -r
+
+    To display builtin command help use help
+    $ help cd
+
+EOF
+    exit 2
+}
+
+unset trim
+
+case "$1" in
+-t | --trim)
+    trim=true
+    shift
+    ;;
+-v | --version)
+    echo $version
+    exit 0
+    ;;
+-h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
+# find all builtin commands and decide the command name either
+# man or help.
+if type "$1" | grep -q "builtin"; then
+    use=help
+else
+    use=man
+fi
+
+# help doesn't have Description nor empty lines after
+# option description.
+if [[ $use == "man" ]]; then
+    if [[ $# -eq 2 ]]; then
+        if [[ $trim == true ]]; then
+            # If two args given, output the option description
+            $use "$1" | col -bx | sed -n "/^  *$2/,/^$/p" | sed 's/  */ /g'
+            exit 0
+        else
+            # If two args given, output the option description
+            $use "$1" | col -bx | sed -n "/^  *$2/,/^$/p"
+            exit 0
+        fi
+    else
+        # otherwise display the command description
+        if [[ $trim == true ]]; then
+            $use "$1" | col -bx | sed -n '/^DESCRIPTION/,/^$/p' | sed 's/  */ /g'
+            exit 0
+        else
+            $use "$1" | col -bx | sed -n '/^DESCRIPTION/,/^$/p'
+        fi
+    fi
+else
+    if [[ $# -eq 2 ]]; then
+        if [ $trim = true ]; then
+            # If two args given, output from the option description to the end of line since there is no empty lines in help outputs.
+            $use "$1" | col -bx | sed -n "/^  *$2/,/$/p" | sed 's/  */ /g'
+            exit 0
+        else
+            $use "$1" | col -bx | sed -n "/^  *$2/,/$/p"
+            exit 0
+        fi
+    else
+        if [[ $trim = true ]]; then
+            # output from the first line to before Option
+            $use "$1" | col -bx | sed '/Option/,$d' | sed 's/  */ /g'
+            exit 0
+        else
+            $use "$1" | col -bx | sed '/Option/,$d'
+            exit 0
+        fi
+    fi
+fi
