@@ -2,7 +2,7 @@
 
 ## Overview
 
-This script outputs a command description or an option description from the man or help page.
+Manop outputs a command description or an option description from the man or help page.
 
 ## Installation
 
@@ -30,31 +30,31 @@ manop [ -t | -h | -v][ command name ][ command option ]
 
 ### Examples
 
-Shows wget -b option description:
+Print `wget -b` option description:
 
 ```sh
 manop wget -b
 ```
 
-Shows the ls command description:
+Print the `ls` command description:
 
 ```sh
 manop ls
 ```
 
-Shows builtin commands description:
+Print a builtin command description:
 
 ```sh
 manop cd
 ```
 
-Shows builtin cd -e option description:
+Print the builtin cd -e option description:
 
 ```sh
 manop cd -e
 ```
 
-The outputs may have spaces. You can trim spaces:
+The outputs may have spaces. You can trim spaces using `-t` flag:
 
 ```sh
 manop grep -b
@@ -63,9 +63,9 @@ manop grep -b
              the respective matched line.
 
 manop -t grep -b
- -b, --byte-offset
- The offset in bytes of a matched pattern is displayed in front of
- the respective matched line.
+-b, --byte-offset
+The offset in bytes of a matched pattern is displayed in front of
+the respective matched line.
 ```
 
 To display builtin command help use help:
