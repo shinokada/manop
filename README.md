@@ -8,9 +8,9 @@ Manop outputs a command description or an option description from the man or hel
 
 ## Installation
 
-### macOS/Linux using Homebrew
+### macOS using Homebrew
 
-If you installed [Homebrew](https://brew.sh/) on your macOS/Linux, you can run:
+If you installed [Homebrew](https://brew.sh/) on your macOS, you can run:
 
 ```sh
 brew tap shinokada/manop && brew install manop
