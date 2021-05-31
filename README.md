@@ -4,6 +4,8 @@
 
 Manop outputs a command description or an option description from the man or help page.
 
+[Medium article](https://medium.com/mkdir-awesome/how-to-use-manop-to-print-only-selected-content-from-the-man-page-11309b9efa38)
+
 ## Installation
 
 ### Homebrew
@@ -13,9 +15,24 @@ brew tap shinokada/manop
 brew install manop
 ```
 
-### Clone/Download
+### Linux
 
-If you prefer clone/download, you clone/download this repo and make a symlink to your bin directory. Your bin directory needs to be in your PATH variable in your terminal configuration file, such as ~/.zshrc.
+I keep manop in the /home/shin/awesome directory:
+
+```sh
+mkdir /home/your-username/awesome
+cd /home/your-username/awesome
+git clone https://github.com/shinokada/manop.git
+vim ~/.bashrc
+```
+
+Then add the PATH to the /home/your-username/bin directory in the ~/.bashrc file.
+
+```sh
+export PATH="/home/your-username/bin:$PATH"
+```
+
+Add a symlink:
 
 ```sh
 ln -sf ~/path/to/manop ~/bin/manop
