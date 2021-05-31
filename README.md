@@ -1,4 +1,4 @@
-# manop
+# manop for macOS/Linux
 
 ## Overview
 
