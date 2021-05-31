@@ -11,8 +11,7 @@ Manop outputs a command description or an option description from the man or hel
 ### Homebrew
 
 ```sh
-brew tap shinokada/manop
-brew install manop
+brew tap shinokada/manop && brew install manop
 ```
 
 ### Linux
