@@ -16,16 +16,28 @@ brew tap shinokada/manop && brew install manop
 
 ### Linux
 
-I keep manop in the /home/shin/awesome directory:
+I keep manop in the `/home/shin/awesome` directory:
 
 ```sh
 mkdir /home/your-username/awesome
 cd /home/your-username/awesome
 git clone https://github.com/shinokada/manop.git
-vim ~/.bashrc
 ```
 
-Then add the PATH to the /home/your-username/bin directory in the ~/.bashrc file.
+Create the ~/bin directory:
+
+```sh
+mkdir ~/bin
+```
+
+Check if /home/your-username/bin in the PATH variable:
+
+```sh
+echo $PATH
+/home/your-username/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+```
+
+If not add the /home/your-username/bin directory to the ~/.bashrc file.
 
 ```sh
 export PATH="/home/your-username/bin:$PATH"
@@ -34,7 +46,19 @@ export PATH="/home/your-username/bin:$PATH"
 Add a symlink:
 
 ```sh
-ln -s ~/path/to/manop ~/bin/manop
+ln -s /home/your-username/awesome/manop/manop ~/bin/manop
+```
+
+Check if the symlink is working:
+
+```sh
+which manop
+/home/your-username/bin/manop
+manop -h
+Name:
+=====
+manop
+...
 ```
 
 ## Usage
