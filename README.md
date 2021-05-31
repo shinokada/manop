@@ -45,6 +45,13 @@ If not add the /home/your-username/bin directory to the ~/.bashrc file.
 export PATH="/home/your-username/bin:$PATH"
 ```
 
+Source the ~/.bashrc file and check it again:
+
+```sh
+source ~/.bashrc
+echo $PATH
+```
+
 Add a symlink:
 
 ```sh
