@@ -34,7 +34,7 @@ export PATH="/home/your-username/bin:$PATH"
 Add a symlink:
 
 ```sh
-ln -sf ~/path/to/manop ~/bin/manop
+ln -s ~/path/to/manop ~/bin/manop
 ```
 
 ## Usage
