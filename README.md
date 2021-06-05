@@ -2,13 +2,13 @@
 
 ## Overview
 
-Manop outputs a command description or an option description from the man or help page.
+Manop is a simple Bash script that display a command description and options from Man page or help on macOS/Linux..
 
 [Medium article](https://medium.com/mkdir-awesome/how-to-use-manop-to-print-only-selected-content-from-the-man-page-11309b9efa38)
 
 ## Installation
 
-### macOS using Homebrew
+### Homebrew
 
 If you installed [Homebrew](https://brew.sh/) on your macOS, you can run:
 
@@ -17,6 +17,14 @@ brew tap shinokada/manop && brew install manop
 ```
 
 ### Linux
+
+#### [Awesome script package manager](https://github.com/shinokada/awesome)
+
+```sh
+awesome install manop
+```
+
+#### Clone/Download
 
 I keep manop in the `/home/shin/awesome` directory:
 
