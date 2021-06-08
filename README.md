@@ -21,7 +21,7 @@ brew tap shinokada/manop && brew install manop
 #### [Awesome script package manager](https://github.com/shinokada/awesome)
 
 ```sh
-awesome install manop
+awesome -i manop
 ```
 
 #### Clone/Download
@@ -76,6 +76,15 @@ Name:
 =====
 manop
 ...
+```
+
+## Uninstallation
+
+```sh
+# brew
+brew unistall manop
+# awesome
+awesome rm manop
 ```
 
 ## Usage
