@@ -11,28 +11,17 @@ script_name=$(basename "$0")
 
 usage() {
     cat <<EOF
-
-Name:
-=====
-$script_name
-
-Version:
-=====
-$version
-
-Description:
-=====
-This script outputs a command description or an option description from the man page.
+Name: $script_name
+Version: $version
+Description: This script outputs a command description or an option description from the man page.
 
 Usage:
-======
 $script_name [ -t | -h | -v][ command name ][ command option ]
     -t | --trim    Trim spaces
     -v | --version Show version
     -h | --help    Help
 
 Examples:
-=========
     Shows wget -b option description.
     $ manop wget -b
 
@@ -50,27 +39,35 @@ Examples:
 
     To display builtin command help use help
     $ help cd
-
 EOF
     exit 2
 }
 
 unset trim
 
-case "$1" in
--t | --trim)
-    trim=true
-    shift
-    ;;
--v | --version)
-    echo $version
-    exit 0
-    ;;
--h | --help)
+if (($# > 0)); then
+    case "$1" in
+    -t | --trim)
+        trim=true
+        shift
+        ;;
+    -v | --version)
+        echo $version
+        exit 0
+        ;;
+    -h | --help)
+        usage
+        exit 0
+        ;;
+    *)
+        usage
+        exit 0
+        ;;
+    esac
+else
     usage
     exit 0
-    ;;
-esac
+fi
 
 # find all builtin commands and decide the command name either
 # man or help.
