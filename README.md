@@ -6,6 +6,10 @@ Manop is a simple Bash script that display a command description and options fro
 
 [Medium article](https://medium.com/mkdir-awesome/how-to-use-manop-to-print-only-selected-content-from-the-man-page-11309b9efa38)
 
+## Requirements
+
+UNIX-lie (Tested on Ubuntu and MacOS.)
+
 ## Installation
 
 ### Homebrew
