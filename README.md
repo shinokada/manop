@@ -148,6 +148,6 @@ help cd
 
 Shinichi Okada
 
-## Licence
+## License
 
-Please see license.txt.
+Please see license.
