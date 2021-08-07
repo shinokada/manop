@@ -12,6 +12,14 @@ UNIX-lie (Tested on Ubuntu and MacOS.)
 
 ## Installation
 
+### [Awesome script package manager](https://github.com/shinokada/awesome)
+
+For macOS/Linux
+
+```sh
+awesome install manop
+```
+
 ### Homebrew
 
 If you installed [Homebrew](https://brew.sh/) on your macOS, you can run:
@@ -20,15 +28,17 @@ If you installed [Homebrew](https://brew.sh/) on your macOS, you can run:
 brew tap shinokada/manop && brew install manop
 ```
 
-### Linux
+### Linux/Debian/Ubuntu
 
-#### [Awesome script package manager](https://github.com/shinokada/awesome)
+Download the latest deb file from the [release page](https://github.com/shinokada/dotties/releases).
 
 ```sh
-awesome -i manop
+sudo apt install manop_XXXXXXX.deb
 ```
 
-#### Clone/Download
+Replace `XXXXXXX` with the downloaded version.
+
+#### Manual
 
 I keep manop in the `/home/shin/awesome` directory:
 
