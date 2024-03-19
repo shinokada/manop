@@ -1,8 +1,11 @@
+<a href='https://ko-fi.com/Z8Z2CHALG' target='_blank'><img height='42' style='border:0px;height:42px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' /></a>
+</p>
+
 # manop for macOS/Linux
 
 ## Overview
 
-Manop is a simple Bash script that display a command description and options from Man page or help on macOS/Linux..
+Manop is a simple Bash script that display a command description and options from Man page or help on macOS/Linux.
 
 [Medium article](https://medium.com/mkdir-awesome/how-to-use-manop-to-print-only-selected-content-from-the-man-page-11309b9efa38)
 
